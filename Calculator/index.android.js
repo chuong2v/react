@@ -20,6 +20,7 @@ export default class Calculator extends Component {
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.number}>1</Text>
+            <Text style={styles.characters}>~</Text>
           </View>
 
           <View style={styles.column}>
@@ -53,12 +54,12 @@ export default class Calculator extends Component {
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.number}>7</Text>
-            <Text style={styles.characters}>PQR</Text>
+            <Text style={styles.characters}>PQRS</Text>
           </View>
 
           <View style={styles.column}>
             <Text style={styles.number}>8</Text>
-            <Text style={styles.characters}>STUV</Text>
+            <Text style={styles.characters}>TUV</Text>
           </View>
           
           <View style={styles.column}>
@@ -68,12 +69,20 @@ export default class Calculator extends Component {
         </View>
         
         <View style={styles.row}>
-          <View style={styles.column}></View>
-           <View style={styles.column}>
-            <Text style={styles.number}>0</Text>
-            <Text style={styles.characters}>@#$%&*</Text>
+          <View style={styles.column}>
+            <Text style={styles.number}>*</Text>
+            <Text style={styles.characters}>,</Text>
           </View>
-          <View style={styles.column}></View>
+
+          <View style={styles.column}>
+            <Text style={styles.number}>0</Text>
+            <Text style={styles.characters}>+</Text>
+          </View>
+
+          <View style={styles.column}>
+            <Text style={styles.number}>#</Text>
+            <Text style={styles.characters}>.</Text>
+          </View>
         </View>
       
       </View>
@@ -107,7 +116,7 @@ const styles = StyleSheet.create({
     fontSize: 48
   },
   characters: {
-    fontSize: 24
+    fontSize: 18
   }
 });
 
