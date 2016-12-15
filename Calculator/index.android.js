@@ -4,13 +4,8 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import React, {Component} from 'react';
+import {AppRegistry, StyleSheet, Text, View} from 'react-native';
 
 export default class Calculator extends Component {
   render() {
@@ -27,13 +22,13 @@ export default class Calculator extends Component {
             <Text style={styles.number}>2</Text>
             <Text style={styles.characters}>ABC</Text>
           </View>
-          
+
           <View style={styles.column}>
             <Text style={styles.number}>3</Text>
             <Text style={styles.characters}>DEF</Text>
           </View>
         </View>
-        
+
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.number}>4</Text>
@@ -44,13 +39,13 @@ export default class Calculator extends Component {
             <Text style={styles.number}>5</Text>
             <Text style={styles.characters}>JKL</Text>
           </View>
-          
+
           <View style={styles.column}>
             <Text style={styles.number}>6</Text>
             <Text style={styles.characters}>MNO</Text>
           </View>
         </View>
-        
+
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.number}>7</Text>
@@ -61,13 +56,13 @@ export default class Calculator extends Component {
             <Text style={styles.number}>8</Text>
             <Text style={styles.characters}>TUV</Text>
           </View>
-          
+
           <View style={styles.column}>
             <Text style={styles.number}>9</Text>
             <Text style={styles.characters}>WXYZ</Text>
           </View>
         </View>
-        
+
         <View style={styles.row}>
           <View style={styles.column}>
             <Text style={styles.number}>*</Text>
@@ -84,7 +79,7 @@ export default class Calculator extends Component {
             <Text style={styles.characters}>.</Text>
           </View>
         </View>
-      
+
       </View>
     );
   }
@@ -110,9 +105,9 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
-  number:{
+  number: {
     fontSize: 48
   },
   characters: {
