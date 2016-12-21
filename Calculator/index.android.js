@@ -4,7 +4,7 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,43 +13,51 @@ import {
   TouchableOpacity,
   Navigator
 } from 'react-native';
-import Number from "./components/Number.js";
+import Number from './components/Number.js';
+import Photo from './components/Photo.js';
+import MyInput from './components/MyInput.js';
 
 class Calculator extends Component {
 
   renderScene(route, navigator) {
     switch (route.name) {
-      case "main":
+      case 'main':
         return (
           <MainFrame
-            click1={() => navigator.push({name: "number1"})}
-            click2={() => navigator.push({name: "number2"})}
-            click3={() => navigator.push({name: "number3"})}
-            click4={() => navigator.push({name: "number4"})}
-            click5={() => navigator.push({name: "number5"})}
-            click6={() => navigator.push({name: "number6"})}
-            click7={() => navigator.push({name: "number7"})}
-            click8={() => navigator.push({name: "number8"})}
-            click9={() => navigator.push({name: "number9"})}></MainFrame>
+            click1={() => navigator.push({ name: 'number1' })}
+            click2={() => navigator.push({ name: 'number2' })}
+            click3={() => navigator.push({ name: 'number3' })}
+            click4={() => navigator.push({ name: 'number4' })}
+            click5={() => navigator.push({ name: 'number5' })}
+            click6={() => navigator.push({ name: 'number6' })}
+            click7={() => navigator.push({ name: 'number7' })}
+            click8={() => navigator.push({ name: 'number8' })}
+            click9={() => navigator.push({ name: 'number9' })}
+            clickInput={() => navigator.push({ name: 'input' })}
+            clickPhoto={() => navigator.push({ name: 'photo' })}></MainFrame>
         );
-      case "number1":
-        return (<Number number="1" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number2":
-        return (<Number number="2" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number3":
-        return (<Number number="3" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number4":
-        return (<Number number="4" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number5":
-        return (<Number number="5" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number6":
-        return (<Number number="6" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number7":
-        return (<Number number="7" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number8":
-        return (<Number number="8" clickBack={() => navigator.pop({name: "main"})}/>);
-      case "number9":
-        return (<Number number="9" clickBack={() => navigator.pop({name: "main"})}/>);
+      case 'number1':
+        return (<Number number="1" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number2':
+        return (<Number number="2" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number3':
+        return (<Number number="3" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number4':
+        return (<Number number="4" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number5':
+        return (<Number number="5" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number6':
+        return (<Number number="6" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number7':
+        return (<Number number="7" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number8':
+        return (<Number number="8" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'number9':
+        return (<Number number="9" clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'input':
+        return (<MyInput clickBack={() => navigator.pop({ name: 'main' })}/>);
+      case 'photo':
+        return (<Photo clickBack={() => navigator.pop({ name: 'main' })}/>);
     }
   }
 
@@ -57,10 +65,10 @@ class Calculator extends Component {
     return (
       <Navigator
         initialRoute={{
-        name: "main"
+        name: 'main',
       }}
         renderScene={this.renderScene}></Navigator>
-    )
+    );
   }
 }
 
@@ -139,7 +147,7 @@ export default class MainFrame extends Component {
         </View>
 
         <View style={styles.row}>
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={this.props.clickInput}>
             <View style={styles.column}>
               <Text style={styles.number}>*</Text>
               <Text style={styles.characters}>,</Text>
@@ -153,7 +161,7 @@ export default class MainFrame extends Component {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
+          <TouchableOpacity style={styles.button} onPress={this.props.clickPhoto}>
             <View style={styles.column}>
               <Text style={styles.number}>#</Text>
               <Text style={styles.characters}>.</Text>
@@ -172,13 +180,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    flexDirection: 'column'
+    flexDirection: 'column',
   },
   row: {
     fontSize: 20,
     textAlign: 'center',
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   column: {
     textAlign: 'center',
@@ -186,18 +194,18 @@ const styles = StyleSheet.create({
     flex: 1,
     borderWidth: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   button: {
     flex: 1,
-    backgroundColor: 'lightblue'
+    backgroundColor: 'lightblue',
   },
   number: {
-    fontSize: 48
+    fontSize: 48,
   },
   characters: {
-    fontSize: 18
-  }
+    fontSize: 18,
+  },
 });
 
 AppRegistry.registerComponent('Calculator', () => Calculator);
